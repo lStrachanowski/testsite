@@ -32,7 +32,7 @@ window.onload = function() {
       startX = touchObj.pageX;
       startY = touchObj.pageY;
       startTime = new Date().getTime();
-      e.preventDefault();
+      // e.preventDefault();
     }, false);
 
     touchSurface.addEventListener('touchmove', function(e) {
@@ -47,7 +47,7 @@ window.onload = function() {
       var swipeleftBol = (elapsedTime <= allowedTime && dist <= thresholdLeft  && Math.abs(touchObj.pageY - startY) <= 100);
       handleswipe(swiperightBol,"right");
       handleswipe(swipeleftBol,"left");
-      e.preventDefault();
+      // e.preventDefault();
     },false);
 
 
@@ -140,13 +140,10 @@ function slideOneEvent() {
   socjalObj.style.display = "none";
   dotObj.classList.remove("animateDot1");
 
-  console.log("site.slide 1");
-    console.log(site.slide);
-    console.log(site.check );
+
   // If not white then fade out to white
   if (site.slide == 1 && site.check > 1) {
-    console.log(site.slide);
-    console.log("true 1 >1");
+
     headlineObj.style.backgroundColor = "rgb(125,125,125)";
     backWhite.style.backgroundColor = "rgb(125,125,125)";
     dotObj.style.backgroundColor = "rgb(164, 191, 198)";
@@ -160,8 +157,6 @@ function slideOneEvent() {
 function slideTwoEvent() {
 
   site.slide = 2;
-  console.log("site.slide 2");
-  console.log(site.slide);
 
   headlineObj.style.backgroundColor = "rgb(164, 191, 198)";
   headlineObj.innerHTML = "Gallery";
@@ -169,9 +164,6 @@ function slideTwoEvent() {
   textObj.style.display = "none";
 
   if (site.slide == 2 && site.check == 3) {
-    console.log("true 2 = 3");
-    console.log(site.slide);
-    console.log(site.check );
 
     dotObj.classList.remove("animateDot2");
     dotObj.style.backgroundColor = "rgb(125,125,125)";
@@ -185,10 +177,6 @@ function slideTwoEvent() {
   }
 
   if (site.slide == 2 && site.check !== 3) {
-
-    console.log("true 2 !3");
-    console.log(site.slide);
-    console.log(site.check );
 
     dotObj.classList.add("animateDot1");
     backWhite.style.animation = "fadeInGallAnimation 0.8s forwards";
@@ -204,8 +192,7 @@ function slideTwoEvent() {
 function slideThreeEvent() {
   site.check = 3;
   site.slide = 3;
-  console.log("site.slide 3");
-  console.log(site.slide);
+
   textObj.style.display = "none";
   dotObj.classList.remove("animateDot1");
   dotObj.classList.add("animateDot2");
